@@ -59,7 +59,8 @@
     </section>
 
     <section class="contact-form-section shell">
-      <form class="contact-form" data-reveal>
+      <!-- On garde ton formulaire tel quel, on ajoute juste un ID pour le cibler en JS -->
+      <form class="contact-form" id="portfolio-form" data-reveal>
         <div class="form-grid">
           <div class="field">
             <label for="name">Nom</label>
@@ -71,28 +72,23 @@
           </div>
           <div class="field">
             <label for="subject">Sujet</label>
+            <!-- Ajout de name="subject" pour Formspree -->
             <input type="text" id="subject" name="subject" placeholder="Stage, freelance, collaboration…" />
           </div>
           <div class="field">
             <label for="message">Message</label>
+            <!-- Ajout de name="message" pour Formspree -->
             <textarea id="message" name="message" placeholder="Décrivez votre projet ou votre besoin…" required></textarea>
           </div>
         </div>
 
         <div class="form-submit">
-          <button type="submit" class="btn">
+          <button type="submit" class="btn" id="submit-btn">
             Envoyer le message
             <span class="arrow">→</span>
           </button>
         </div>
       </form>
-
-      <div class="contact-socials-row">
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="tel:+2250585156240">+225 05 85 15 62 40</a>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer shell">

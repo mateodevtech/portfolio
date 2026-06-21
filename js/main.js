@@ -313,22 +313,70 @@ function initProjectPreview() {
 /* ----------------------------------------------------------
    Contact form — placeholder feedback (no backend yet)
 ---------------------------------------------------------- */
+/* ----------------------------------------------------------
+   Contact form — Formspree Asynchronous Integration (AJAX)
+---------------------------------------------------------- */
 function initFormFeedback() {
-  const form = document.querySelector(".contact-form");
+  // On cible le formulaire par sa classe ou son ID (on cherche l'un ou l'autre)
+  const form = document.querySelector(".contact-form") || document.getElementById("portfolio-form");
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Empêche le rechargement de la page (préserve Lenis & GSAP)
+
     const btn = form.querySelector(".form-submit button");
     if (!btn) return;
-    const original = btn.textContent;
-    btn.textContent = "Message envoyé";
+
+    // Sauvegarde du design initial du bouton
+    const originalText = btn.innerHTML;
+    
+    // Changement visuel : Mode envoi
+    btn.innerHTML = "Envoi en cours... <span class='arrow'>~</span>";
     btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = original;
+
+    // Collecte des données du formulaire
+    const formData = new FormData(form);
+
+    try {
+      // /!\ REMPLACE 'TON_ID_FORMSPREE' par ton véritable identifiant Formspree
+      const response = await fetch('https://formspree.io/f/movvznlr', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // Succès : Changement visuel premium
+        btn.innerHTML = "Message envoyé ! <span class='arrow'>✓</span>";
+        
+        // Optionnel : si tu veux appliquer temporairement une couleur verte de succès
+        const originalBg = btn.style.backgroundColor;
+        btn.style.backgroundColor = "#4ade80"; 
+        btn.style.borderColor = "#4ade80";
+        btn.style.color = "#0b0d10";
+
+        form.reset(); // Vide les champs du formulaire
+
+        // On rétablit le bouton après un petit délai pour l'UX
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.backgroundColor = originalBg;
+          btn.style.borderColor = "";
+          btn.style.color = "";
+          btn.disabled = false;
+        }, 3000);
+
+      } else {
+        throw new Error('Réponse serveur incorrecte');
+      }
+    } catch (error) {
+      // Gestion des erreurs (Réseau, mauvais ID, etc.)
+      btn.innerHTML = "Erreur. Réessayer ? <span class='arrow'>→</span>";
       btn.disabled = false;
-      form.reset();
-    }, 2400);
+      alert("Oups ! Une petite erreur est survenue lors de l'envoi. Vous pouvez m'écrire directement à ephraimanani7@gmail.com");
+    }
   });
 }
 
@@ -344,3 +392,4 @@ function initIconFallback() {
     }, { once: true });
   });
 }
+
