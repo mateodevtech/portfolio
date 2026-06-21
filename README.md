@@ -1,7 +1,7 @@
 # Portfolio — Ephraim Anani
 
-Site multi-pages inspiré du style de lukebaffait.fr (fond sombre, transitions
-de page, smooth scroll, terminal animé) adapté à ton profil fullstack.
+Site multi-pages (fond sombre, transitions
+de page, smooth scroll, terminal animé) adapté profil fullstack.
 
 ## Lancer en local
 
@@ -13,7 +13,7 @@ python3 -m http.server 8080
 
 Puis ouvre `http://localhost:8080/` dans le navigateur.
 
-> Important : ouvre toujours via un serveur local (pas en double-cliquant
+> Important : ouvrir toujours via un serveur local (pas en double-cliquant
 > sur le fichier), sinon les liens absolus (`/css/...`, `/works/...`) ne
 > fonctionneront pas.
 
@@ -32,24 +32,6 @@ js/main.js                → Lenis (smooth scroll), GSAP (animations),
 assets/images/            → placeholders SVG (à remplacer par tes captures)
 ```
 
-## Pour ajouter un vrai projet
-
-1. Duplique le dossier `works/projet-01/` en `works/projet-02/`, etc.
-2. Modifie le titre, la stack, le texte de présentation.
-3. Remplace le bloc `.cover-frame` par une vraie image :
-   ```html
-   <img src="/assets/images/projets/mon-projet.jpg" alt="Capture du projet" />
-   ```
-4. Ajoute une ligne dans `works/index.html` (copie un `.project-row`
-   existant) et mets à jour `data-preview` avec ta vraie image.
-5. Si tu veux aussi l'afficher en page d'accueil, fais pareil dans `index.html`.
-
-## Personnalisation rapide
-
-- **Couleur d'accent** : variable `--accent` dans `css/style.css` (actuellement `#d98e3d`)
-- **Texte du terminal** (hero) : tableau `lines` dans `js/main.js`, fonction `initTerminal()`
-- **Liens sociaux** : remplace les `href="https://github.com/"` etc. par tes vrais profils
-  dans `index.html`, `works/index.html`, `contact/index.html`
 
 ## Notes techniques
 
