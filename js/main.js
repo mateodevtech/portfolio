@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocalClock(); 
   initProjectPreview();
   initFormFeedback();
+  initIconFallback();
 });
 
 /* ----------------------------------------------------------
@@ -328,5 +329,18 @@ function initFormFeedback() {
       btn.disabled = false;
       form.reset();
     }, 2400);
+  });
+}
+
+
+/* ----------------------------------------------------------
+   Brand icons — graceful fallback if a CDN icon fails to load
+---------------------------------------------------------- */
+function initIconFallback() {
+  document.querySelectorAll(".skill-icon, .marquee-icon").forEach((img) => {
+    if (img.tagName !== "IMG") return;
+    img.addEventListener("error", () => {
+      img.style.display = "none";
+    }, { once: true });
   });
 }
