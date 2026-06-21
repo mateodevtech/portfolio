@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initPageTransitions();
   initRevealAnimations();
-  initTerminal();
+  initLocalClock(); 
   initProjectPreview();
   initFormFeedback();
 });
@@ -146,11 +146,20 @@ function initRevealAnimations() {
     );
   });
 
-  gsap.fromTo(".hero-kicker", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.2 });
-  gsap.fromTo(".hero-portrait", { opacity: 0, y: 20, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 1, delay: 0.4, ease: "power3.out" });
-  gsap.fromTo(".hero-sub", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9, delay: 1.0 });
-  gsap.fromTo(".hero-bottom", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9, delay: 1.15 });
-  gsap.fromTo(".terminal", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1, delay: 1.3, ease: "power3.out" });
+  // gsap.fromTo(".hero-kicker", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.2 });
+  // gsap.fromTo(".hero-portrait", { opacity: 0, y: 20, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 1, delay: 0.4, ease: "power3.out" });
+  // gsap.fromTo(".hero-sub", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9, delay: 1.0 });
+  // gsap.fromTo(".hero-bottom", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9, delay: 1.15 });
+  // gsap.fromTo(".terminal", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1, delay: 1.3, ease: "power3.out" });
+
+  // Hero-full entrance
+  gsap.fromTo(".hero-full-tagline", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.2 });
+  gsap.fromTo(".hero-full-clock", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.3 });
+  gsap.fromTo(".hf-firstname", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, delay: 0.35, ease: "power4.out" });
+  gsap.fromTo(".hf-lastname-wrap", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, delay: 0.55, ease: "power4.out" });
+  gsap.fromTo(".hero-full-scrollcue", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 1.1 });
+  gsap.fromTo(".hero-marquee", { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 1.0 });
+  gsap.fromTo(".glow-field span", { opacity: 0 }, { opacity: 0.85, duration: 1.8, delay: 0.1, stagger: 0.15, ease: "power2.out" });
 
   // Generic reveal-up for elements marked [data-reveal]
   gsap.utils.toArray("[data-reveal]").forEach((el) => {
@@ -242,6 +251,27 @@ function initTerminal() {
 /* ----------------------------------------------------------
    Project list — floating preview image follows cursor
 ---------------------------------------------------------- */
+
+/* ----------------------------------------------------------
+   Hero — live local time (Abidjan, GMT)
+---------------------------------------------------------- */
+function initLocalClock() {
+  const el = document.getElementById("local-time");
+  if (!el) return;
+
+  function update() {
+    const now = new Date();
+    const formatted = new Intl.DateTimeFormat("fr-FR", {
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone: "Africa/Abidjan",
+    }).format(now);
+    el.textContent = formatted;
+  }
+
+  update();
+  setInterval(update, 30000);
+}
 function initProjectPreview() {
   const rows = document.querySelectorAll(".project-row[data-preview]");
   const preview = document.querySelector(".project-preview");

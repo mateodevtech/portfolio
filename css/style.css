@@ -251,7 +251,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   position: relative;
   justify-self: end;
   width: 100%;
-  max-width: 380px;
+  max-width: 280px;
 }
 .hero-portrait .frame {
   position: relative;
@@ -441,7 +441,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-
 /* ============================================================
    HERO — fullscreen gradient variant (signature hero)
    ============================================================ */
@@ -450,11 +449,12 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow: hidden;
   background: var(--bg);
 }
 
+/* blurred amber/copper gradient field */
 .hero-full .glow-field {
   position: absolute;
   inset: 0;
@@ -519,7 +519,12 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .hero-full-top {
   position: relative;
   z-index: 2;
-  padding: 36px 48px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 110px 48px 0;
 }
 .hero-full-tagline {
   font-size: 15px;
@@ -532,6 +537,19 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   color: #f3e3cf;
 }
 
+.hero-full-clock {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.hero-full-clock .status-dot { width: 6px; height: 6px; }
+
 .hero-full-names {
   position: relative;
   z-index: 2;
@@ -540,7 +558,8 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
-  padding: 0 40px 28px;
+  padding: 0 40px;
+  margin-top: auto;
 }
 
 .hf-firstname {
@@ -550,6 +569,13 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   line-height: 0.85;
   letter-spacing: -0.03em;
   color: #f2f0ec;
+}
+
+.hf-lastname-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
 }
 
 .hf-lastname {
@@ -565,64 +591,91 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   color: transparent;
 }
 
-.hero-full-bar {
+.hf-role {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+/* scroll cue, positioned above the marquee */
+.hero-full-scrollcue {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-end;
+  margin: 28px 48px 0 auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.hero-full-scrollcue .line-v {
+  width: 1px; height: 30px;
+  background: linear-gradient(var(--text-faint), transparent);
+  position: relative;
+  overflow: hidden;
+}
+.hero-full-scrollcue .line-v::after {
+  content: "";
+  position: absolute;
+  top: -100%; left: 0; right: 0; height: 100%;
+  background: linear-gradient(var(--accent), transparent);
+  animation: scrollDrip 1.8s var(--ease-soft) infinite;
+}
+
+/* ---------- marquee ---------- */
+.hero-marquee {
   position: relative;
   z-index: 2;
   border-top: 1px solid rgba(255,255,255,0.14);
+  overflow: hidden;
+  padding: 20px 0;
+  margin-top: 24px;
+}
+.marquee-track {
   display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+.marquee-set {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 22px 40px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.hf-version {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.04em;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.4vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--text-dim);
+  padding-right: 14px;
 }
-
-.hf-links {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-dim);
+.marquee-set .dot-sep {
+  color: var(--accent);
+  margin: 0 22px;
+  font-family: var(--font-body);
 }
-.hf-links a:hover { color: var(--text); }
-.hf-links .sep { color: var(--text-faint); }
-
-.hf-nav {
-  display: flex;
-  gap: 28px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-dim);
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-.hf-nav a:hover, .hf-nav a.active { color: var(--text); }
 
 @media (max-width: 880px) {
-  .hero-full-top { padding: 28px 24px 0; }
-  .hero-full-names { padding: 0 24px 20px; flex-direction: column; gap: 0; }
-  .hero-full-bar { padding: 18px 24px; }
-  .hf-links, .hf-nav { display: none; }
+  .hero-full-top { padding: 96px 24px 0; flex-direction: column; gap: 14px; }
+  .hero-full-names { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 40px; }
+  .hf-lastname-wrap { align-items: flex-start; }
+  .hero-full-scrollcue { display: none; }
+  .marquee-set { font-size: 16px; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
 
-/* ============================================================
-   INTRO / about strip
-   ============================================================ */
-   
 .intro {
   padding: 140px 0;
   border-top: 1px solid var(--line);
