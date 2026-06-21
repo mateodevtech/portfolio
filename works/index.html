@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets — Ephraim Anani</title>
+  <meta name="description" content="Découvrez les projets web et applications développés par Ephraim Anani." />
+  <meta name="theme-color" content="#0b0d10" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+</head>
+<body>
+
+  <div class="transition-overlay" aria-hidden="true">
+    <span class="t-label">Chargement…</span>
+  </div>
+
+  <header class="site-header">
+    <a href="/" class="logo">Ephraim<span class="dot">.</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="/">Accueil</a>
+      <a href="/works/" class="active">Projets</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-drawer" aria-label="Navigation mobile">
+    <a href="/">Accueil</a>
+    <a href="/works/">Projets</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+
+  <main>
+    <section class="works-hero shell">
+      <p class="eyebrow">Projets</p>
+      <h1>Cinq projets,<br />cinq apprentissages.</h1>
+      <p>
+        Du e-commerce à la marketplace de recyclage, chaque projet a été l'occasion de
+        renforcer une compétence précise — conception d'API, authentification, interfaces, déploiement.
+      </p>
+
+      <div class="works-filter" role="group" aria-label="Filtrer par technologie">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="react">React</button>
+        <button class="filter-btn" data-filter="java">Java / Spring</button>
+        <button class="filter-btn" data-filter="node">Node.js</button>
+      </div>
+    </section>
+
+    <section class="full-project-list shell">
+      <div class="project-list" data-reveal-group>
+
+        <a href="/works/projet-01/" class="project-row" data-cat="react java" data-preview="/assets/images/placeholder-1.svg">
+          <span class="p-index">01</span>
+          <span class="p-name">Plateforme e-commerce</span>
+          <span class="p-tags">React · Spring Boot · MySQL</span>
+          <span class="p-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+
+        <a href="/works/projet-02/" class="project-row" data-cat="java" data-preview="/assets/images/placeholder-2.svg">
+          <span class="p-index">02</span>
+          <span class="p-name">Système de réservation de tickets</span>
+          <span class="p-tags">Java · API REST</span>
+          <span class="p-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+
+        <a href="/works/projet-03/" class="project-row" data-cat="node react" data-preview="/assets/images/placeholder-3.svg">
+          <span class="p-index">03</span>
+          <span class="p-name">Marketplace de recyclage</span>
+          <span class="p-tags">Next.js · Node.js</span>
+          <span class="p-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+
+        <a href="/works/projet-04/" class="project-row" data-cat="react" data-preview="/assets/images/placeholder-2.svg">
+          <span class="p-index">04</span>
+          <span class="p-name">Site critique de films</span>
+          <span class="p-tags">React · API REST</span>
+          <span class="p-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+
+        <a href="/works/projet-05/" class="project-row" data-cat="java" data-preview="/assets/images/placeholder-1.svg">
+          <span class="p-index">05</span>
+          <span class="p-name">API REST — gestion de rôles &amp; auth</span>
+          <span class="p-tags">Java · Spring Boot · JWT</span>
+          <span class="p-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+
+      </div>
+
+      <div class="project-preview" aria-hidden="true">
+        <img src="" alt="" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-row">
+      <span class="f-name">© 2026 Ephraim Anani</span>
+      <div class="footer-socials">
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:ephraimanani7@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    // simple client-side filter
+    document.querySelectorAll(".filter-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.dataset.filter;
+        document.querySelectorAll(".project-row").forEach((row) => {
+          const cats = row.dataset.cat || "";
+          const show = filter === "all" || cats.includes(filter);
+          row.style.display = show ? "" : "none";
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ephraim Anani — Développeur Fullstack</title>
+  <meta name="description" content="Ephraim Anani, développeur fullstack basé à Abidjan, spécialisé en Java/Spring Boot et React. Découvrez mes projets." />
+  <meta name="theme-color" content="#0b0d10" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- page transition overlay -->
+  <div class="transition-overlay" aria-hidden="true">
+    <span class="t-label">Chargement…</span>
+  </div>
+
+  <!-- header -->
+  <header class="site-header">
+    <a href="/" class="logo">Ephraim<span class="dot">.</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="/" class="active">Accueil</a>
+      <a href="/works/">Projets</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- mobile drawer -->
+  <nav class="mobile-drawer" aria-label="Navigation mobile">
+    <a href="/">Accueil</a>
+    <a href="/works/">Projets</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <!-- HERO -->
+    <section class="hero-full">
+      <div class="glow-field" aria-hidden="true">
+        <span class="glow-1"></span>
+        <span class="glow-2"></span>
+        <span class="glow-3"></span>
+      </div>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <div class="hero-full-top">
+        <p class="hero-full-tagline">
+          Créatif discret, <em>je donne vie aux idées,</em><br />
+          entre code, rigueur et clarté.
+        </p>
+      </div>
+
+      <div class="hero-full-names">
+        <span class="hf-firstname">Ephraim</span>
+        <span class="hf-lastname">Anani.</span>
+      </div>
+
+      <div class="hero-full-bar">
+        <span class="hf-version">→ V1.0</span>
+        <div class="hf-links">
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <span class="sep">/</span>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="sep">/</span>
+          <a href="mailto:ephraimanani7@gmail.com">Email</a>
+        </div>
+        <nav class="hf-nav">
+          <a href="/works/">Work</a>
+          <a href="/contact/">Info</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro shell">
+      <div class="intro-grid">
+        <p class="intro-statement">
+          Curieux, rigoureux,<br />
+          <span class="dim">orienté résultat.</span>
+        </p>
+        <div class="intro-body">
+          <p data-reveal>
+            Étudiant en BTS Informatique et Développement d'Applications, j'ai été formé au
+            <strong>backend Java/Spring Boot</strong> à l'Atos Digital Academy, puis au
+            <strong>développement fullstack</strong> à Epitech via le programme WeCode.
+          </p>
+          <p data-reveal>
+            J'aime comprendre un problème avant de coder une solution&nbsp;: conception d'API,
+            authentification, CI/CD, qualité de code — chaque projet est l'occasion de renforcer
+            mes fondations techniques tout en soignant l'expérience finale.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK PREVIEW -->
+    <section class="work-section shell">
+      <div class="work-header" data-reveal>
+        <h2>Projets récents</h2>
+        <a href="/works/" class="text-link">Tout voir →</a>
+      </div>
+
+      <div class="project-list" data-reveal-group>
+        <a href="/works/projet-01/" class="project-row" data-preview="/assets/images/placeholder-1.svg">
+          <span class="p-index">01</span>
+          <span class="p-name">Plateforme e-commerce</span>
+          <span class="p-tags">React · Spring Boot · MySQL</span>
+          <span class="p-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a href="/works/projet-02/" class="project-row" data-preview="/assets/images/placeholder-2.svg">
+          <span class="p-index">02</span>
+          <span class="p-name">Système de réservation de tickets</span>
+          <span class="p-tags">Java · API REST</span>
+          <span class="p-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a href="/works/projet-03/" class="project-row" data-preview="/assets/images/placeholder-3.svg">
+          <span class="p-index">03</span>
+          <span class="p-name">Marketplace de recyclage</span>
+          <span class="p-tags">Next.js · Node.js</span>
+          <span class="p-arrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- floating preview, cursor-tracked -->
+      <div class="project-preview" aria-hidden="true">
+        <img src="" alt="" />
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills-section shell">
+      <div class="skills-head">
+        <h2 data-reveal>Compétences &amp; outils</h2>
+        <p data-reveal>
+          BTS Informatique et Développement d'Applications (IDA) à l'ISTEMA Abidjan,
+          complété par des formations spécialisées en backend Java et développement fullstack.
+        </p>
+      </div>
+
+      <div class="skills-grid" data-reveal-group>
+        <div class="skill-card">
+          <h3>Frontend</h3>
+          <ul>
+            <li>HTML5 / CSS</li>
+            <li>JavaScript</li>
+            <li>React.js</li>
+            <li>Next.js</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Backend</h3>
+          <ul>
+            <li>Java / Spring Boot</li>
+            <li>PHP</li>
+            <li>Python</li>
+            <li>API REST</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Bases de données</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>Conception de schémas</li>
+            <li>Gestion de systèmes</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>DevOps &amp; Outils</h3>
+          <ul>
+            <li>Docker</li>
+            <li>Jenkins</li>
+            <li>SonarQube</li>
+            <li>ArgoCD</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Qualité &amp; CI/CD</h3>
+          <ul>
+            <li>JUnit</li>
+            <li>GitLab CI</li>
+            <li>Pratiques Agile / Scrum</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Sécurité</h3>
+          <ul>
+            <li>Authentification &amp; rôles</li>
+            <li>Notions de cybersécurité</li>
+            <li>Bonnes pratiques OWASP</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-strip shell">
+      <p class="eyebrow">Disponible pour un stage</p>
+      <h2 class="cta-title"><a href="/contact/">Discutons<br />de votre projet.</a></h2>
+      <p class="cta-sub">ephraimanani7@gmail.com — réponse sous 24h</p>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-row">
+      <span class="f-name">© 2026 Ephraim Anani</span>
+      <div class="footer-socials">
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:ephraimanani7@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

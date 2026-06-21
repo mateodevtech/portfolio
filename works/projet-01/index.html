@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plateforme e-commerce — Ephraim Anani</title>
+  <meta name="description" content="Plateforme e-commerce développée par Ephraim Anani avec React, Spring Boot et MySQL." />
+  <meta name="theme-color" content="#0b0d10" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+</head>
+<body>
+
+  <div class="transition-overlay" aria-hidden="true">
+    <span class="t-label">Chargement…</span>
+  </div>
+
+  <header class="site-header">
+    <a href="/" class="logo">Ephraim<span class="dot">.</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="/">Accueil</a>
+      <a href="/works/" class="active">Projets</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="mobile-drawer" aria-label="Navigation mobile">
+    <a href="/">Accueil</a>
+    <a href="/works/">Projets</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+
+  <main>
+    <section class="project-hero shell">
+      <p class="eyebrow">Projet 01 — E-commerce</p>
+      <h1>Plateforme<br />e-commerce.</h1>
+
+      <dl class="project-meta-row">
+        <div>
+          <dt>Rôle</dt>
+          <dd>Développeur fullstack</dd>
+        </div>
+        <div>
+          <dt>Stack</dt>
+          <dd>React · Spring Boot · MySQL</dd>
+        </div>
+        <div>
+          <dt>Contexte</dt>
+          <dd>Programme WeCode — Epitech</dd>
+        </div>
+        <div>
+          <dt>Statut</dt>
+          <dd>En cours</dd>
+        </div>
+      </dl>
+    </section>
+
+    <div class="project-cover">
+      <div class="cover-frame">
+        <span>Capture à venir</span>
+      </div>
+    </div>
+
+    <section class="project-body shell">
+      <div class="project-body-grid">
+        <h2>Aperçu</h2>
+        <div>
+          <p>
+            Cette plateforme e-commerce a été développée dans le cadre du programme WeCode
+            à Epitech. L'objectif&nbsp;: construire une expérience d'achat complète, du catalogue
+            produit au paiement, avec une API REST robuste en backend.
+          </p>
+          <p>
+            Le frontend React communique avec un backend Spring Boot exposant les ressources
+            produits, panier et commandes, le tout connecté à une base MySQL.
+          </p>
+
+          <div class="placeholder-note">
+            <span class="accent">// Note —</span> cette page est un gabarit prêt à recevoir le contenu réel
+            du projet&nbsp;: captures d'écran, lien démo, lien dépôt GitHub, détails techniques.
+            Remplace ce texte et l'image ci-dessus une fois le projet finalisé.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-row">
+      <span class="f-name">© 2026 Ephraim Anani</span>
+      <div class="footer-socials">
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:ephraimanani7@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
